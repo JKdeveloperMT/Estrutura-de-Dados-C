@@ -37,8 +37,10 @@ stPessoa CadDados(){
   	for(i=0; i<10; i++){
 	  
   	    vetP[i].nome[0]='\n';
+  	    vetP[i].sexo[0]='\n';
 		vetP[i].idade = 0;
 		vetP[i].peso = 0;
+		vetP[i].altura = 0;
 }
 }
 
@@ -49,7 +51,7 @@ main(){
 	int cad = 0;
 	int limplist = 1;
     stPessoa pessoa;
-    stPessoa vetP[10];
+    stPessoa vetP[MAX];
     do{
     printf("1-Cadastrar Pessoas\n");
     printf("2-listar Pessoas\n");
@@ -65,7 +67,7 @@ main(){
      
         case 1:
         	if (limplist == 1){
-        for(i=0; i<10; i++)	vetP[i] = CadDados();
+        for(i=0; i<MAX; i++)	vetP[i] = CadDados();
            cad = 1;
            limplist = 0;
        }else{ 
@@ -78,7 +80,7 @@ main(){
   	    	
   	    	if (cad == 1){
 			  
-  	    	for(i=0; i<10; i++){
+  	    	for(i=0; i<MAX; i++){
 		    printf("\nNome:%s\t",vetP[i].nome);
 		    printf("\nIdade:%d",vetP[i].idade);
 		    printf("\nPeso:%.2f\n",vetP[i].peso);
